@@ -2,29 +2,23 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { BrowserModule } from "@angular/platform-browser";
 import { Routes, RouterModule } from "@angular/router";
-
-import { IndexComponent } from "./pages/index/index.component";
-import { ProfilepageComponent } from "./pages/examples/profilepage/profilepage.component";
-import { RegisterpageComponent } from "./pages/examples/registerpage/registerpage.component";
-import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.component";
 import { ShopListComponent } from "./pages/shop-list/shop-list.component";
+import { ShopDetailsComponent } from "./pages/shop-details/shop-details.component";
 
 const routes: Routes = [
-  { path: "", redirectTo: "shop-list", pathMatch: "full" },
-  { path: "home", component: IndexComponent },
-  { path: "profile", component: ProfilepageComponent },
-  { path: "register", component: RegisterpageComponent },
-  { path: "landing", component: LandingpageComponent },
-  { path: "shop-list", component: ShopListComponent }
+  { path: "", redirectTo: "shop-list", pathMatch: 'full' },
+  { path: "shop-list", component: ShopListComponent },
+  {
+    path: 'shop-list/:id',
+    component: ShopDetailsComponent,
+  },
 ];
 
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
-    RouterModule.forRoot(routes, {
-      useHash: true
-    })
+    RouterModule.forRoot(routes)
   ],
   exports: []
 })

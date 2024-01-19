@@ -1,1 +1,26 @@
-<p>shop-card works!</p>
+<div [routerLink]="shopData.id">
+    <div class="container">
+      <div class="row">
+        <div class="card card-coin card-plain">
+          <div class="card-header">
+            <div class="img-center img-fluid rounded-circle">
+                <img
+                  class="img-center img-fluid rounded-circle"
+                  src="{{shopData.image_background}}"
+                />
+            </div>
+    
+            <h4 class="title">{{shopData.name}}</h4>
+          </div>
+          <div class="card-body">
+        <div class="row justify-content-center">
+            <span class="badge badge-success cen">
+                This shop has {{shopData.games_count}} games
+              </span>
+            <a href="https:/{{shopData.domain}}" target="_blank"(click)="stopPropagation($event)" class="btn btn-secondary btn-lg" role="button" >WebSite</a>
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
