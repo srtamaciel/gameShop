@@ -21,6 +21,10 @@ import { IndexComponent } from "./index/index.component";
 import { ProfilepageComponent } from "./examples/profilepage/profilepage.component";
 import { RegisterpageComponent } from "./examples/registerpage/registerpage.component";
 import { LandingpageComponent } from "./examples/landingpage/landingpage.component";
+import { ShopListComponent } from './shop-list/shop-list.component';
+import { ShopCardComponent } from './shop-list/shop-card/shop-card.component';
+import { ShopDetailsComponent } from './shop-details/shop-details.component';
+import { GameModalComponent } from './shop-details/game-modal/game-modal.component';
 
 @NgModule({
   imports: [
@@ -45,7 +49,11 @@ import { LandingpageComponent } from "./examples/landingpage/landingpage.compone
     IndexComponent,
     ProfilepageComponent,
     RegisterpageComponent,
-    LandingpageComponent
+    LandingpageComponent,
+    ShopListComponent,
+    ShopCardComponent,
+    ShopDetailsComponent,
+    GameModalComponent
   ],
   exports: [
     IndexComponent,
