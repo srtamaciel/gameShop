@@ -21,7 +21,7 @@
     margin-top: $margin-base-vertical;
   }
   .progress-badge {
-    color: $white;
+    color: black;;
     font-size: $font-size-sm;
     text-transform: uppercase;
 
@@ -43,7 +43,7 @@
         position: absolute;
         top: 2px;
         right: 0;
-        color: $white;
+        color: black;
         font-size: $font-size-xs;
       }
     }

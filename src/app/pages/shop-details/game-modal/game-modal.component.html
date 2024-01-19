@@ -1,1 +1,29 @@
-<p>game-modal works!</p>
+<app-spinner *ngIf="isLoading"></app-spinner>
+<div *ngIf="!isLoading"> 
+  <div class="modal-header justify-content-center">
+      <h4 class="title title-upr">{{gameData?.name}}</h4>
+      <button type="button" class="close" (click)="closeModal()">
+        <span>&times;</span>
+      </button>
+    </div>
+    <carousel>
+      <slide *ngFor="let img of gameImages">
+        <img [src]="img" alt="game img">
+      </slide>
+    </carousel>
+    <div class="modal-body">
+      <p [innerHTML]="gameData?.description">
+      </p>
+      <div class="col-3 progress-container progress-success">
+        <span class="progress-badge"> Rating </span>
+        <progressbar class="progress-bar-success" [value]="gameData?.rating" [max]="5">
+          <span class="progress-value"> {{gameData?.rating}}% </span>
+        </progressbar>
+      </div>
+    </div>
+    <div class="modal-footer justify-content-end">
+      <button class="btn btn-danger" data-dismiss="modal" type="button" (click)="closeModal()">
+        Close
+      </button>
+    </div>
+</div>

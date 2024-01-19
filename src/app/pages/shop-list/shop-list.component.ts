@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { ShopResponse } from 'src/interfaces/shops.interfaces';
 import { ShopDataService } from 'src/services/shop-data.service';
 
@@ -8,20 +9,23 @@ import { ShopDataService } from 'src/services/shop-data.service';
   styleUrls: ['./shop-list.component.scss']
 })
 export class ShopListComponent implements OnInit {
+  private shopDataSubscription: Subscription;
   shopData: ShopResponse;
   isCollapsed = true;
+    isLoading = true;
+
   constructor(private shopDataService: ShopDataService) {}
 
   ngOnInit() {
     this.loadShopData();
-    var body = document.getElementsByTagName("body")[0];
+    const body = document.getElementsByTagName("body")[0];
     body.classList.add("profile-page");
   }
 
   loadShopData(){
-    this.shopDataService.getShopList().subscribe({
+    this.shopDataSubscription = this.shopDataService.getShopList().subscribe({
       next: (response: ShopResponse) => {
-          console.log(response);
+        this.isLoading = false;
           this.shopData = response;
       },
       error: (err) => {
@@ -32,7 +36,10 @@ export class ShopListComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    var body = document.getElementsByTagName("body")[0];
+      if (this.shopDataSubscription) {
+        this.shopDataSubscription.unsubscribe();
+      }
+    const body = document.getElementsByTagName("body")[0];
     body.classList.remove("profile-page");
   }
 

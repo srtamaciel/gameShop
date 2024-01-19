@@ -25,6 +25,7 @@ import { ShopListComponent } from './shop-list/shop-list.component';
 import { ShopCardComponent } from './shop-list/shop-card/shop-card.component';
 import { ShopDetailsComponent } from './shop-details/shop-details.component';
 import { GameModalComponent } from './shop-details/game-modal/game-modal.component';
+import { SpinnerComponent } from "../shared/spinner/spinner.component";
 
 @NgModule({
   imports: [
@@ -53,7 +54,8 @@ import { GameModalComponent } from './shop-details/game-modal/game-modal.compone
     ShopListComponent,
     ShopCardComponent,
     ShopDetailsComponent,
-    GameModalComponent
+    GameModalComponent,
+    SpinnerComponent
   ],
   exports: [
     IndexComponent,

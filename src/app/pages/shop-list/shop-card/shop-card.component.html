@@ -1,4 +1,4 @@
-<div [routerLink]="shopData.id">
+<div [routerLink]="shopData.id" (click)="getGames(shopData.games)">
     <div class="container">
       <div class="row">
         <div class="card card-coin card-plain">
@@ -13,9 +13,9 @@
             <h4 class="title">{{shopData.name}}</h4>
           </div>
           <div class="card-body">
-        <div class="row justify-content-center">
+        <div class="row buttons-aligned">
             <span class="badge badge-success cen">
-                This shop has {{shopData.games_count}} games
+                This store has {{shopData.games_count}} games
               </span>
             <a href="https:/{{shopData.domain}}" target="_blank"(click)="stopPropagation($event)" class="btn btn-secondary btn-lg" role="button" >WebSite</a>
         </div>

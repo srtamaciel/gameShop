@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ShopData } from 'src/interfaces/shops.interfaces';
+import { GamesNode, ShopData } from 'src/interfaces/shops.interfaces';
+import { ShopDataService } from 'src/services/shop-data.service';
 
 @Component({
   selector: 'app-shop-card',
@@ -8,11 +9,14 @@ import { ShopData } from 'src/interfaces/shops.interfaces';
 })
 export class ShopCardComponent implements OnInit {
   @Input() shopData: ShopData;
-  constructor() { }
+  
+  constructor(private shopDataService: ShopDataService) { }
 
   ngOnInit(): void {
   }
-
+  getGames(gameList: GamesNode[]) {
+    this.shopDataService.gameList.next(gameList);
+  }
   stopPropagation(event: Event): void {
     event.stopPropagation();
   }

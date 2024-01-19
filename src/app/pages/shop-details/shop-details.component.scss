@@ -1,0 +1,20 @@
+:root {
+    --circle-size: 200px; /* Tamaño inicial del círculo */
+  }
+  
+  .circle-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 800px; /* Ajusta según tus necesidades */
+    margin: 0 auto;
+  }
+  
+  .circle-image {
+    width: var(--circle-size);
+    height: var(--circle-size);
+    max-width: 100%; /* La imagen no superará el tamaño del contenedor */
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+  }
