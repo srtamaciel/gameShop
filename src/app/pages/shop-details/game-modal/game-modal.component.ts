@@ -41,7 +41,7 @@ export class GameModalComponent implements OnInit {
             this.gameImages.push(response.background_image_additional);
         },
         error: (err) => {
-          console.log(err);
+          return err
         },
       });
   }

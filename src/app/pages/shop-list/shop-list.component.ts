@@ -1,18 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { ShopResponse } from 'src/interfaces/shops.interfaces';
-import { ShopDataService } from 'src/services/shop-data.service';
+import { Component, OnInit } from "@angular/core";
+import { Subscription } from "rxjs";
+import { ShopResponse } from "src/interfaces/shops.interfaces";
+import { ShopDataService } from "src/services/shop-data.service";
 
 @Component({
-  selector: 'app-shop-list',
-  templateUrl: './shop-list.component.html',
-  styleUrls: ['./shop-list.component.scss']
+  selector: "app-shop-list",
+  templateUrl: "./shop-list.component.html",
+  styleUrls: ["./shop-list.component.scss"],
 })
 export class ShopListComponent implements OnInit {
   private shopDataSubscription: Subscription;
   shopData: ShopResponse;
   isCollapsed = true;
-    isLoading = true;
+  isLoading = true;
 
   constructor(private shopDataService: ShopDataService) {}
 
@@ -22,25 +22,23 @@ export class ShopListComponent implements OnInit {
     body.classList.add("profile-page");
   }
 
-  loadShopData(){
+  loadShopData() {
     this.shopDataSubscription = this.shopDataService.getShopList().subscribe({
       next: (response: ShopResponse) => {
         this.shopData = response;
         this.isLoading = false;
       },
       error: (err) => {
-        console.log(err)
-
-      }
-    })
+        return err;
+      },
+    });
   }
 
   ngOnDestroy() {
-      if (this.shopDataSubscription) {
-        this.shopDataSubscription.unsubscribe();
-      }
+    if (this.shopDataSubscription) {
+      this.shopDataSubscription.unsubscribe();
+    }
     const body = document.getElementsByTagName("body")[0];
     body.classList.remove("profile-page");
   }
-
 }
