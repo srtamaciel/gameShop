@@ -25,8 +25,8 @@ export class ShopListComponent implements OnInit {
   loadShopData(){
     this.shopDataSubscription = this.shopDataService.getShopList().subscribe({
       next: (response: ShopResponse) => {
+        this.shopData = response;
         this.isLoading = false;
-          this.shopData = response;
       },
       error: (err) => {
         console.log(err)

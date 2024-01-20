@@ -11,15 +11,15 @@
         <img [src]="img" alt="game img">
       </slide>
     </carousel>
+    <div class="col-3 my-3 progress-container progress-success">
+      <span class="progress-badge"> Rating </span>
+      <progressbar class="progress-bar-success" [value]="gameData?.rating" [max]="5">
+        <span class="progress-value"> {{gameData?.rating}}% </span>
+      </progressbar>
+    </div>
     <div class="modal-body">
-      <p [innerHTML]="gameData?.description">
+      <p [innerHTML]="gameData?.description ? gameData?.description :'No description for this game'">
       </p>
-      <div class="col-3 progress-container progress-success">
-        <span class="progress-badge"> Rating </span>
-        <progressbar class="progress-bar-success" [value]="gameData?.rating" [max]="5">
-          <span class="progress-value"> {{gameData?.rating}}% </span>
-        </progressbar>
-      </div>
     </div>
     <div class="modal-footer justify-content-end">
       <button class="btn btn-danger" data-dismiss="modal" type="button" (click)="closeModal()">

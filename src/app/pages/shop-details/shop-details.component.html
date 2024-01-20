@@ -74,34 +74,22 @@
             </h1>
             <p
               class="text-white mb-3"
-              [innerHTML]="shopDetails?.description"
+              [innerHTML]="shopDetails?.description ? shopDetails?.description : 'No description for this shop'"
             ></p>
           </div>
-          <div class="col-lg-4 col-md-5 circle-container">
+          <div class="col-lg-4 col-md-5">
             <img
-              alt="Circle image"
-              class="circle-image"
+              alt="image"
               src="{{ shopDetails?.image_background }}"
             />
           </div>
-          <div class="table-responsive">
-            <table class="table tablesorter">
-              <thead class="text-danger">
-                <h3><th>Available Games</th></h3>
-              </thead>
-              <tbody>
-                <tr *ngFor="let game of gameList">
-                  <div class="col-md-4 p-0">
-                    <button
-                      class="btn btn-primary mb-3"
-                      (click)="openModal(game.id)"
-                    >
-                      {{ game.name }}
-                    </button>
-                  </div>
-                </tr>
-              </tbody>
-            </table>
+          <div class="table-responsive" *ngIf="gameList?.length">
+            <h4>Available Games list</h4>
+            <ul class="ul-dots">
+              <li *ngFor="let game of gameList">
+                <a class="btn" role="button" (click)="openModal(game.id)">{{ game.name }}</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
