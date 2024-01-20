@@ -10,6 +10,15 @@ From the provided template, create a small website with the following features:
 - On that page, display the list of games available in the store.
 - Create a game component that will be shown in a modal after clicking on the corresponding item in the previous list. Display information such as the name, description, one of the associated images (optionally include a carousel if there is more than one photo), the release date, and the rating. For the rating, use the progress element from the template.
 
+### Shop list component
+![screenshot-list](https://i.ibb.co/hR5n6x2/Captura-de-pantalla-2024-01-20-a-las-10-17-32.png)
+
+## Shop details component
+![screenshot-details](https://i.ibb.co/wL6tS2L/Captura-de-pantalla-2024-01-20-a-las-10-17-46.png)
+
+## Modal component
+![screenshot-modal](https://i.ibb.co/2kNzcQ7/Captura-de-pantalla-2024-01-20-a-las-10-17-55.png)
+
 ## File Structure
 Within the download you'll find the following directories and files:
 
