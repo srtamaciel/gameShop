@@ -17,10 +17,6 @@ import { ModalModule } from "ngx-bootstrap/modal";
 import { JwBootstrapSwitchNg2Module } from "jw-bootstrap-switch-ng2";
 import { PopoverModule } from "ngx-bootstrap/popover";
 
-import { IndexComponent } from "./index/index.component";
-import { ProfilepageComponent } from "./examples/profilepage/profilepage.component";
-import { RegisterpageComponent } from "./examples/registerpage/registerpage.component";
-import { LandingpageComponent } from "./examples/landingpage/landingpage.component";
 import { ShopListComponent } from './shop-list/shop-list.component';
 import { ShopCardComponent } from './shop-list/shop-card/shop-card.component';
 import { ShopDetailsComponent } from './shop-details/shop-details.component';
@@ -47,22 +43,13 @@ import { SpinnerComponent } from "../shared/spinner/spinner.component";
     ModalModule.forRoot()
   ],
   declarations: [
-    IndexComponent,
-    ProfilepageComponent,
-    RegisterpageComponent,
-    LandingpageComponent,
     ShopListComponent,
     ShopCardComponent,
     ShopDetailsComponent,
     GameModalComponent,
     SpinnerComponent
   ],
-  exports: [
-    IndexComponent,
-    ProfilepageComponent,
-    RegisterpageComponent,
-    LandingpageComponent
-  ],
+  exports: [],
   providers: []
 })
 export class PagesModule {}
