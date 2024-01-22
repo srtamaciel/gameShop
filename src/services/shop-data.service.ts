@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { ShopResponse } from '../interfaces/shops.interfaces';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { ShopDetails } from 'src/interfaces/shop-details.interface';
-import { GameData } from 'src/interfaces/game-details.interfaz';
+import { GameData } from 'src/interfaces/game-details.interface';
 
 @Injectable({
   providedIn: 'root'

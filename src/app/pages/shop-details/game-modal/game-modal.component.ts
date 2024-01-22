@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { BsModalRef } from "ngx-bootstrap/modal";
 import { Subscription } from "rxjs";
-import { GameData } from "src/interfaces/game-details.interfaz";
+import { GameData } from "src/interfaces/game-details.interface";
 import { ShopDataService } from "src/services/shop-data.service";
 
 @Component({

@@ -59,7 +59,7 @@ app
  ┣ app.component.ts
  ┗ app.module.ts
  ┃ interfaces
- ┃ ┣ game-details.interfaz.ts
+ ┃ ┣ game-details.interface.ts
  ┃ ┣ shop-details.interface.ts
  ┃ ┗ shops.interfaces.ts
  ┃ services
@@ -75,7 +75,8 @@ or
 - Download zip
 
 ```shell
+$ nvm use v14
 $ npm install
-$ npm start
+$ npm **start**
 
 ```
